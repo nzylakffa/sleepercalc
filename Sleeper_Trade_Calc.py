@@ -17,20 +17,20 @@ from io import StringIO
 ###################
 ##### Sidebar #####
 ###################
-st.sidebar.image('ffa_red.png', use_column_width=True)
+# st.sidebar.image('ffa_red.png', use_column_width=True)
 st.sidebar.markdown(" ## About This App:")
 st.sidebar.markdown("This is a trade calculator for those of you playing in Sleeper leagues!")
 
 st.sidebar.markdown("## Read This!")
-st.sidebar.markdown("You must fill out the 4 values on the Collect League tab before moving on to the calculator.")
-st.sidebar.markdown("## Input Username:")
+st.sidebar.markdown("You will see errors until you fill out the 4 items on this page and then select your team and a trade partner on the Trade Calculator tab!")
+st.sidebar.markdown("## 1) Input Username:")
 st.sidebar.markdown("This is your Sleeper Username")
-st.sidebar.markdown("## Input Season:")
+st.sidebar.markdown("## 2) Input Season:")
 st.sidebar.markdown("This is the season you're looking at. Use 2023 for last season and 2024 once we draft our teams for 2024.")
-st.sidebar.markdown("## Select the league you want to use:")
+st.sidebar.markdown("## 3) Select the league you want to use:")
 st.sidebar.markdown("This is a dropdown of all the league's you're in! If you don't know which is which then just pick one and check out the trade calculator tab to see which team of yours that is.")
-st.sidebar.markdown("## What is your league's scoring format:")
-st.sidebar.markdown("This should be self explanatory.")
+st.sidebar.markdown("## 4) Input your league's scoring format")
+st.sidebar.markdown("## 5) Go to the Trade Calculator tab and select your display name along with your trade partner's display name")
 
 tab_scrape, tab_trade = st.tabs(["Collect League", "Trade Calculator"])
 
@@ -206,7 +206,7 @@ with tab_scrape:
             s_bench = 0
     
     scoring = st.selectbox(
-        "What is your league's scoring format?",
+        "Input your league's scoring format",
         ('PPR', 'HPPR', 'Std', '1.5 TE', '6 Pt Pass', 'DK'))
 
     # GitHub raw URL for the CSV file
