@@ -13,7 +13,6 @@ import requests
 from fuzzywuzzy import process
 from re import findall
 from io import StringIO
-from espn_api.football import League
 
 # Set logging level to WARNING
 logging.getLogger('espn_api').setLevel(logging.WARNING)
