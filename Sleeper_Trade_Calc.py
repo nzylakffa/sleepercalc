@@ -30,6 +30,7 @@ st.sidebar.markdown("## 3) Select the league you want to use")
 st.sidebar.markdown("This is a dropdown of all the league's you're in! If you don't know which is which then just pick one and check out the trade calculator tab to see which team of yours that is.")
 st.sidebar.markdown("## 4) Input your league's scoring format")
 st.sidebar.markdown("## 5) Go to the Trade Calculator tab and select your display name along with your trade partner's display name")
+st.sidebar.markdown("## 6) You'll need to wait a few seconds for the tool to pull all the information")
 
 tab_scrape, tab_trade = st.tabs(["Collect League", "Trade Calculator"])
 
