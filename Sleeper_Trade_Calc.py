@@ -18,8 +18,6 @@ from io import StringIO
 ##### Sidebar #####
 ###################
 st.sidebar.image('ffa_red.png', use_column_width=True)
-st.sidebar.markdown(" ## About This App:")
-st.sidebar.markdown("This is a trade calculator for those of you playing in Sleeper leagues!")
 
 st.sidebar.markdown("## Read This!")
 st.sidebar.markdown("You will see errors until you fill out the 4 items on this page and then select your team and a trade partner on the Trade Calculator tab!")
@@ -49,13 +47,13 @@ with tab_scrape:
             user_info = response.json()
             return user_info
         except requests.exceptions.HTTPError as errh:
-            # st.write ("HTTP Error:",errh)
+            st.write ("Error: Please Input Sleeper Username Above:")
         except requests.exceptions.ConnectionError as errc:
-            # st.write ("Error Connecting:",errc)
+            st.write ("Error: Please Input Sleeper Username Above:")
         except requests.exceptions.Timeout as errt:
-            # st.write ("Timeout Error:",errt)
+            st.write ("Error: Please Input Sleeper Username Above:")
         except requests.exceptions.RequestException as err:
-            # st.write ("Something went wrong:",err)
+            st.write ("Error: Please Input Sleeper Username Above:")
     
     def get_user_leagues(user_id, sport, season):
         api_url = f"https://api.sleeper.app/v1/user/{user_id}/leagues/{sport}/{season}"
@@ -66,13 +64,13 @@ with tab_scrape:
             leagues_info = response.json()
             return leagues_info
         except requests.exceptions.HTTPError as errh:
-            # st.write("HTTP Error:", errh)
+            st.write ("Error: Please Input Season Above:")
         except requests.exceptions.ConnectionError as errc:
-            # st.write("Error Connecting:", errc)
+            st.write ("Error: Please Input Season Above:")
         except requests.exceptions.Timeout as errt:
-            # st.write("Timeout Error:", errt)
+            st.write ("Error: Please Input Season Above:")
         except requests.exceptions.RequestException as err:
-            # st.write("Something went wrong:", err)
+            st.write ("Error: Please Input Season Above:")
             
     def get_league_rosters(league_id):
         api_url = f"https://api.sleeper.app/v1/league/{league_id}/rosters"
@@ -83,13 +81,13 @@ with tab_scrape:
             rosters_info = response.json()
             return rosters_info
         except requests.exceptions.HTTPError as errh:
-            # st.write("HTTP Error:", errh)
+            st.write ("Error: Please Input League ID Above:")
         except requests.exceptions.ConnectionError as errc:
-            # st.write("Error Connecting:", errc)
+            st.write ("Error: Please Input League ID Above:")
         except requests.exceptions.Timeout as errt:
-            # st.write("Timeout Error:", errt)
+            st.write ("Error: Please Input League ID Above:")
         except requests.exceptions.RequestException as err:
-            # st.write("Something went wrong:", err)
+            st.write ("Error: Please Input League ID Above:")
             
     def get_league_users(league_id):
         api_url = f"https://api.sleeper.app/v1/league/{league_id}/users"
@@ -100,13 +98,13 @@ with tab_scrape:
             rosters_info = response.json()
             return rosters_info
         except requests.exceptions.HTTPError as errh:
-            # st.write("HTTP Error:", errh)
+            st.write ("Error: Please Input League ID Above:")
         except requests.exceptions.ConnectionError as errc:
-            # st.write("Error Connecting:", errc)
+            st.write ("Error: Please Input League ID Above:")
         except requests.exceptions.Timeout as errt:
-            # st.write("Timeout Error:", errt)
+            st.write ("Error: Please Input League ID Above:")
         except requests.exceptions.RequestException as err:
-            # st.write("Something went wrong:", err)
+            st.write ("Error: Please Input League ID Above:")
             
     def get_league_draft(league_id):
         api_url = f"https://api.sleeper.app/v1/league/{league_id}/drafts"
@@ -117,13 +115,13 @@ with tab_scrape:
             rosters_info = response.json()
             return rosters_info
         except requests.exceptions.HTTPError as errh:
-            # st.write("HTTP Error:", errh)
+            st.write ("Error: Please Input League ID Above:")
         except requests.exceptions.ConnectionError as errc:
-            # st.write("Error Connecting:", errc)
+            st.write ("Error: Please Input League ID Above:")
         except requests.exceptions.Timeout as errt:
-            # st.write("Timeout Error:", errt)
+            st.write ("Error: Please Input League ID Above:")
         except requests.exceptions.RequestException as err:
-            # st.write("Something went wrong:", err)
+            st.write ("Error: Please Input League ID Above:")
                         
     # Get user information
     user_info = get_user_info(username_to_query)
