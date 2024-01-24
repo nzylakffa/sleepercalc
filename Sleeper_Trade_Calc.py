@@ -49,13 +49,13 @@ with tab_scrape:
             user_info = response.json()
             return user_info
         except requests.exceptions.HTTPError as errh:
-            st.write ("HTTP Error:",errh)
+            # st.write ("HTTP Error:",errh)
         except requests.exceptions.ConnectionError as errc:
-            st.write ("Error Connecting:",errc)
+            # st.write ("Error Connecting:",errc)
         except requests.exceptions.Timeout as errt:
-            st.write ("Timeout Error:",errt)
+            # st.write ("Timeout Error:",errt)
         except requests.exceptions.RequestException as err:
-            st.write ("Something went wrong:",err)
+            # st.write ("Something went wrong:",err)
     
     def get_user_leagues(user_id, sport, season):
         api_url = f"https://api.sleeper.app/v1/user/{user_id}/leagues/{sport}/{season}"
@@ -66,13 +66,13 @@ with tab_scrape:
             leagues_info = response.json()
             return leagues_info
         except requests.exceptions.HTTPError as errh:
-            st.write("HTTP Error:", errh)
+            # st.write("HTTP Error:", errh)
         except requests.exceptions.ConnectionError as errc:
-            st.write("Error Connecting:", errc)
+            # st.write("Error Connecting:", errc)
         except requests.exceptions.Timeout as errt:
-            st.write("Timeout Error:", errt)
+            # st.write("Timeout Error:", errt)
         except requests.exceptions.RequestException as err:
-            st.write("Something went wrong:", err)
+            # st.write("Something went wrong:", err)
             
     def get_league_rosters(league_id):
         api_url = f"https://api.sleeper.app/v1/league/{league_id}/rosters"
@@ -83,13 +83,13 @@ with tab_scrape:
             rosters_info = response.json()
             return rosters_info
         except requests.exceptions.HTTPError as errh:
-            st.write("HTTP Error:", errh)
+            # st.write("HTTP Error:", errh)
         except requests.exceptions.ConnectionError as errc:
-            st.write("Error Connecting:", errc)
+            # st.write("Error Connecting:", errc)
         except requests.exceptions.Timeout as errt:
-            st.write("Timeout Error:", errt)
+            # st.write("Timeout Error:", errt)
         except requests.exceptions.RequestException as err:
-            st.write("Something went wrong:", err)
+            # st.write("Something went wrong:", err)
             
     def get_league_users(league_id):
         api_url = f"https://api.sleeper.app/v1/league/{league_id}/users"
@@ -100,13 +100,13 @@ with tab_scrape:
             rosters_info = response.json()
             return rosters_info
         except requests.exceptions.HTTPError as errh:
-            st.write("HTTP Error:", errh)
+            # st.write("HTTP Error:", errh)
         except requests.exceptions.ConnectionError as errc:
-            st.write("Error Connecting:", errc)
+            # st.write("Error Connecting:", errc)
         except requests.exceptions.Timeout as errt:
-            st.write("Timeout Error:", errt)
+            # st.write("Timeout Error:", errt)
         except requests.exceptions.RequestException as err:
-            st.write("Something went wrong:", err)
+            # st.write("Something went wrong:", err)
             
     def get_league_draft(league_id):
         api_url = f"https://api.sleeper.app/v1/league/{league_id}/drafts"
@@ -117,13 +117,13 @@ with tab_scrape:
             rosters_info = response.json()
             return rosters_info
         except requests.exceptions.HTTPError as errh:
-            st.write("HTTP Error:", errh)
+            # st.write("HTTP Error:", errh)
         except requests.exceptions.ConnectionError as errc:
-            st.write("Error Connecting:", errc)
+            # st.write("Error Connecting:", errc)
         except requests.exceptions.Timeout as errt:
-            st.write("Timeout Error:", errt)
+            # st.write("Timeout Error:", errt)
         except requests.exceptions.RequestException as err:
-            st.write("Something went wrong:", err)
+            # st.write("Something went wrong:", err)
                         
     # Get user information
     user_info = get_user_info(username_to_query)
