@@ -31,7 +31,7 @@ sys.stdout = old_stdout
 ###################
 ##### Sidebar #####
 ###################
-st.sidebar.image('ffa_red.png', use_column_width=True)
+# st.sidebar.image('ffa_red.png', use_column_width=True)
 st.sidebar.markdown(" ## About This App:")
 st.sidebar.markdown("This is a trade calculator for those of you playing in Sleeper leagues!")
 
@@ -314,11 +314,11 @@ with tab_trade:
     rostered_players = pd.concat(dfs).reset_index(drop=True)
 
     # Pull in player id's and names
-    # Replace 'your_file_path.csv' with the actual path to your CSV file
-    file_path = 'C:/Users/nlz20/OneDrive/Fantasy Football Excel/Untitled Folder/sleeper_player_info.csv'
+    # GitHub raw URL for the CSV file
+    github_csv_url = 'https://raw.githubusercontent.com/nzylakffa/sleepercalc/main/sleeper_player_info.csv'
 
     # Read the CSV file into a DataFrame
-    player_ids = pd.read_csv(file_path)
+    player_ids = pd.read_csv(github_csv_url)
  
     # Perform a left join to get player for each df
     final_my_team_roster = my_roster_ids.merge(player_ids, on='player_id', how='left')
