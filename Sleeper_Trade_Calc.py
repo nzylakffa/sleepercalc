@@ -23,8 +23,7 @@ st.sidebar.markdown("This is a trade calculator for those of you playing in Slee
 
 st.sidebar.markdown("## Read This!")
 st.sidebar.markdown("You will see errors until you fill out the 4 items on this page and then select your team and a trade partner on the Trade Calculator tab!")
-st.sidebar.markdown("## 1) Input Username:")
-st.sidebar.markdown("This is your Sleeper Username")
+st.sidebar.markdown("## 1) Input Sleeper Username:")
 st.sidebar.markdown("## 2) Input Season:")
 st.sidebar.markdown("This is the season you're looking at. Use 2023 for last season and 2024 once we draft our teams for 2024.")
 st.sidebar.markdown("## 3) Select the league you want to use:")
