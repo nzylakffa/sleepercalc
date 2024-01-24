@@ -33,8 +33,8 @@ st.sidebar.markdown("7) You'll need to wait a few seconds for the tool to pull a
 
 tab_scrape, tab_trade = st.tabs(["Collect League", "Trade Calculator"])
 
-with tab_scrape:    
-    # Replace 'nzylak' with the actual username you want to query
+with tab_scrape: 
+    st.write("Please Read the Sidebar!")
     username_to_query = st.text_input("Input Username", value="")
     season = st.number_input("Input Season (use the year the draft happened in)", value = 2023)
     
