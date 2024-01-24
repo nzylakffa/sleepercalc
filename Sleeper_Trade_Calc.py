@@ -14,19 +14,6 @@ from fuzzywuzzy import process
 from re import findall
 from io import StringIO
 
-# Set logging level to WARNING
-logging.getLogger('espn_api').setLevel(logging.WARNING)
-
-# Redirect stdout to capture the output
-old_stdout = sys.stdout
-sys.stdout = io.StringIO()
-
-# Get the captured output
-output_text = sys.stdout.getvalue()
-
-# Reset stdout
-sys.stdout = old_stdout
-
 ###################
 ##### Sidebar #####
 ###################
