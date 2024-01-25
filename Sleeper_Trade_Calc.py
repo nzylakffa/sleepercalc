@@ -1005,7 +1005,7 @@ with tab_scrape:
             elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) - 2):
                 st.subheader(f":green[You are winning this trade by a small amount!]")
             elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) - 0.5):
-                st.subheader(f":red[You are winning this trade by a very small amount]")
+                st.subheader(f":green[You are winning this trade by a very small amount]")
             elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) + 0.5):
                 st.subheader(f":red[You are losing this trade by a very small amount]")
             elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) + 2):
@@ -1819,7 +1819,7 @@ with tab_scrape:
             elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) - 1):
                 st.subheader(f":green[You are winning this trade by a small amount!]")
             elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) - 0.5):
-                st.subheader(f":red[You are winning this trade by a very small amount]")
+                st.subheader(f":green[You are winning this trade by a very small amount]")
             elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) + 0.5):
                 st.subheader(f":red[You are losing this trade by a very small amount]")
             elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) + 1):
