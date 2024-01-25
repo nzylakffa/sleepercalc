@@ -221,7 +221,7 @@ with tab_scrape:
         
         # Create a df with pick values
         pick_values = ros[ros['Pos'] == 'Draft']
-        st.dataframe(pick_values)
+        #st.dataframe(pick_values)
 
         # Replace defense names
         replace_dict = {'Ravens D/ST': 'BAL D/ST', 'Cowboys D/ST': 'DAL D/ST', 'Bills D/ST': 'BUF D/ST', 'Jets D/ST': 'NYJ D/ST', 'Dolphins D/ST': 'MIA D/ST',
