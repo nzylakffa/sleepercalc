@@ -1191,7 +1191,7 @@ with tab_scrape:
             my_team_values = my_team_values.rename(columns={'Player Name_y': 'Player Name'})
 
             # Display the merged DataFrame
-            my_team_values = my_team_values[["Player Name", "Team", "Pos", "PPR", "HPPR", "Std", "1.5 TE", "6 Pt Pass", "DK"]]
+            my_team_values = my_team_values[["Player Name", "Team", "Pos", "PPR", "HPPR", "Std", "1.5 TE", "6 Pt Pass"]]
 
             # Add in a "New Pos" feature that's just pos
             my_team_values["New Pos"] = my_team_values["Pos"]
@@ -1217,7 +1217,7 @@ with tab_scrape:
             trade_partner_values = trade_partner_values.rename(columns={'Player Name_y': 'Player Name'})
 
             # Display the merged DataFrame
-            trade_partner_values = trade_partner_values[["Player Name", "Team", "Pos", "PPR", "HPPR", "Std", "1.5 TE", "6 Pt Pass", "DK"]]
+            trade_partner_values = trade_partner_values[["Player Name", "Team", "Pos", "PPR", "HPPR", "Std", "1.5 TE", "6 Pt Pass"]]
 
             # Add in a "New Pos" feature that's just pos
             trade_partner_values["New Pos"] = trade_partner_values["Pos"]
@@ -1243,7 +1243,7 @@ with tab_scrape:
             rostered_values = rostered_values.rename(columns={'Player Name_y': 'Player Name'})
 
             # Display the merged DataFrame
-            rostered_values = rostered_values[["Player Name", "Team", "Pos", "PPR", "HPPR", "Std", "1.5 TE", "6 Pt Pass", "DK"]]    
+            rostered_values = rostered_values[["Player Name", "Team", "Pos", "PPR", "HPPR", "Std", "1.5 TE", "6 Pt Pass"]]    
 
             # Now remove these rows from the ros rankings
             # Merge DataFrames and identify rows
