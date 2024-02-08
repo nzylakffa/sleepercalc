@@ -1048,7 +1048,7 @@ with tab_scrape:
         
         scoring = st.selectbox(
             "Input your league's scoring format",
-            ('PPR', 'HPPR', 'Std', '1.5 TE', '6 Pt Pass', 'DK'))
+            ('PPR', 'HPPR', 'Std', '1.5 TE', '6 Pt Pass'))
 
         # GitHub raw URL for the CSV file
         github_csv_url = 'https://raw.githubusercontent.com/nzylakffa/sleepercalc/main/All%202024%20Projections.csv'
