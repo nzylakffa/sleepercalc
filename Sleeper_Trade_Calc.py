@@ -1051,13 +1051,20 @@ with tab_scrape:
             ('PPR', 'HPPR', 'Std', '1.5 TE', '6 Pt Pass', 'DK'))
 
         # GitHub raw URL for the CSV file
-        github_csv_url = 'https://raw.githubusercontent.com/nzylakffa/sleepercalc/main/ROS%20Rankings%20for%20trade%20calc.csv'
+        github_csv_url = 'https://raw.githubusercontent.com/nzylakffa/sleepercalc/main/All%202024%20Projections.csv'
 
         # Read the CSV file into a DataFrame
         ros = pd.read_csv(github_csv_url)
 
         # Keep these columns of ros
-        ros = ros[["Player Name", "Team", "Pos", "PPR", "HPPR", "Std", "1.5 TE", "6 Pt Pass", "DK"]]
+        ros = ros[["Player Name", "Team", "Pos", "PPR", "HPPR", "Std", "1.5 TE", "6 Pt Pass", "ADP"]]
+
+        # Divide by 17 to get ppg
+        ros["PPR"] = ros["PPR"]/17
+        ros["HPPR"] = ros["HPPR"]/17
+        ros["Std"] = ros["Std"]/17
+        ros["1.5 TE"] = ros["1.5 TE"]/17
+        ros["6 Pt Pass"] = ros["6 Pt Pass"]/17
 
         # Replace defense names
         replace_dict = {'Ravens D/ST': 'BAL D/ST', 'Cowboys D/ST': 'DAL D/ST', 'Bills D/ST': 'BUF D/ST', 'Jets D/ST': 'NYJ D/ST', 'Dolphins D/ST': 'MIA D/ST',
