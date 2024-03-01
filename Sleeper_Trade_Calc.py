@@ -18,7 +18,7 @@ from st_aggrid import AgGrid, GridOptionsBuilder, JsCode
 ###################
 ##### Sidebar #####
 ###################
-st.sidebar.image('ffa_red.png', use_column_width=True)
+# st.sidebar.image('ffa_red.png', use_column_width=True)
 st.sidebar.markdown("<h1 style='text-align: center;'>Read This!</h1>", unsafe_allow_html=True)
 st.sidebar.markdown("1) Click Fullscreen at the bottom for a better user experience")
 st.sidebar.markdown("2) Input Sleeper Username")
@@ -28,8 +28,7 @@ st.sidebar.markdown("4) Select the league you want to use")
 st.sidebar.markdown("(This is a dropdown of all the league's you're in! If you don't know which is which then just pick one and check out the trade calculator tab to see which team of yours that is.)")
 st.sidebar.markdown("5) Turn on the toggle if it's a dynasty league")
 st.sidebar.markdown("6) Input your league's scoring format")
-st.sidebar.markdown("7) Go to the Trade Calculator tab and select your display name along with your trade partner's display name")
-st.sidebar.markdown("8) You'll need to wait a few seconds for the tool to pull all the information")
+st.sidebar.markdown("7) You'll need to wait a few seconds, but the Power Rankings and Trade Calculator can be used now!")
 
 def get_user_leagues(user_id, sport, season):
     api_url = f"https://api.sleeper.app/v1/user/{user_id}/leagues/{sport}/{season}"
@@ -116,7 +115,7 @@ def get_league_draft(league_id):
     except requests.exceptions.RequestException as err:
         st.write ("Error: Please Input League ID Above:")
         
-st.write("Please Read the Sidebar!")
+st.sidebar.markdown("1) Click Fullscreen at the bottom for a better user experience!")
 username_to_query = st.text_input("Input Username", value="")
 season = st.number_input("Input Season (use the year the draft happened in)", value = 2023)
 
@@ -128,7 +127,7 @@ if username_to_query and season:  # Check if both username and season have been 
     if user_info:
         # If user_info is available, then proceed with the rest of the code
         user_id = user_info['user_id']
-        tab_scrape, tab_team_grades, tab_trade = st.tabs(["Collect League", "Team Grades", "Trade Calculator"])
+        tab_scrape, tab_team_grades, tab_trade = st.tabs(["Collect League", "Power Rankings", "Trade Calculator"])
 
         with tab_scrape: 
 
