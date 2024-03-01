@@ -115,7 +115,7 @@ def get_league_draft(league_id):
     except requests.exceptions.RequestException as err:
         st.write ("Error: Please Input League ID Above:")
         
-st.markdown("<h1 style='text-align: center;'>Click Fullscreen at the bottom for a better user experience!</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;'>Click Fullscreen at the bottom for a better user experience!</h3>", unsafe_allow_html=True)
 username_to_query = st.text_input("Input Username", value="")
 season = st.number_input("Input Season (use the year the draft happened in)", value = 2023)
 
