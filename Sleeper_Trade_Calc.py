@@ -18,7 +18,7 @@ from st_aggrid import AgGrid, GridOptionsBuilder, JsCode
 ###################
 ##### Sidebar #####
 ###################
-# st.sidebar.image('ffa_red.png', use_column_width=True)
+st.sidebar.image('ffa_red.png', use_column_width=True)
 st.sidebar.markdown("<h1 style='text-align: center;'>Read This!</h1>", unsafe_allow_html=True)
 st.sidebar.markdown("1) Click Fullscreen at the bottom for a better user experience")
 st.sidebar.markdown("2) Input Sleeper Username")
