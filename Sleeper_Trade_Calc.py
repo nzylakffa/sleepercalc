@@ -735,13 +735,13 @@ if username_to_query and season:  # Check if both username and season have been 
                     gb.configure_grid_options(domLayout='autoHeight')
 
                     # Apply the JS code to the 'Team Grade' column
-                    gb.configure_column("Team Grade", cellStyle=cell_style_jscode_team_grade)
-                    gb.configure_column("QB", cellStyle=cell_style_jscode_qb)
-                    gb.configure_column("RB", cellStyle=cell_style_jscode_rb)
-                    gb.configure_column("WR", cellStyle=cell_style_jscode_wr)
-                    gb.configure_column("TE", cellStyle=cell_style_jscode_te)
-                    gb.configure_column("K", cellStyle=cell_style_jscode_k)
-                    gb.configure_column("D/ST", cellStyle=cell_style_jscode_dst)
+                    gb.configure_column("Team Grade", minWidth=100, cellStyle=cell_style_jscode_team_grade)
+                    gb.configure_column("QB", minWidth = 50, cellStyle=cell_style_jscode_qb)
+                    gb.configure_column("RB", minWidth = 50, cellStyle=cell_style_jscode_rb)
+                    gb.configure_column("WR", minWidth = 50, cellStyle=cell_style_jscode_wr)
+                    gb.configure_column("TE", minWidth = 50, cellStyle=cell_style_jscode_te)
+                    gb.configure_column("K", minWidth = 50, cellStyle=cell_style_jscode_k)
+                    gb.configure_column("D/ST", minWidth = 50, cellStyle=cell_style_jscode_dst)
 
                     # Build the grid options
                     gridOptions = gb.build()
@@ -2103,13 +2103,13 @@ if username_to_query and season:  # Check if both username and season have been 
                     gb.configure_grid_options(domLayout='autoHeight')
 
                     # Apply the JS code to the 'Team Grade' column
-                    gb.configure_column("Team Grade", cellStyle=cell_style_jscode_team_grade)
-                    gb.configure_column("QB", cellStyle=cell_style_jscode_qb)
-                    gb.configure_column("RB", cellStyle=cell_style_jscode_rb)
-                    gb.configure_column("WR", cellStyle=cell_style_jscode_wr)
-                    gb.configure_column("TE", cellStyle=cell_style_jscode_te)
-                    gb.configure_column("K", cellStyle=cell_style_jscode_k)
-                    gb.configure_column("D/ST", cellStyle=cell_style_jscode_dst)
+                    gb.configure_column("Team Grade", minWidth=100, cellStyle=cell_style_jscode_team_grade)
+                    gb.configure_column("QB", minWidth = 50, cellStyle=cell_style_jscode_qb)
+                    gb.configure_column("RB", minWidth = 50, cellStyle=cell_style_jscode_rb)
+                    gb.configure_column("WR", minWidth = 50, cellStyle=cell_style_jscode_wr)
+                    gb.configure_column("TE", minWidth = 50, cellStyle=cell_style_jscode_te)
+                    gb.configure_column("K", minWidth = 50, cellStyle=cell_style_jscode_k)
+                    gb.configure_column("D/ST", minWidth = 50, cellStyle=cell_style_jscode_dst)
 
                     # Build the grid options
                     gridOptions = gb.build()
