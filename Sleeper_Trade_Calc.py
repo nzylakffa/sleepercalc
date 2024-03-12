@@ -735,6 +735,7 @@ if username_to_query and season:  # Check if both username and season have been 
                     gb.configure_grid_options(domLayout='autoHeight')
 
                     # Apply the JS code to the 'Team Grade' column
+                    gb.configure_column("Display Name", minWidth=100)
                     gb.configure_column("Team Grade", minWidth=100, cellStyle=cell_style_jscode_team_grade)
                     gb.configure_column("QB", minWidth = 50, cellStyle=cell_style_jscode_qb)
                     gb.configure_column("RB", minWidth = 50, cellStyle=cell_style_jscode_rb)
@@ -2103,6 +2104,7 @@ if username_to_query and season:  # Check if both username and season have been 
                     gb.configure_grid_options(domLayout='autoHeight')
 
                     # Apply the JS code to the 'Team Grade' column
+                    gb.configure_column("Display Name", minWidth=100)
                     gb.configure_column("Team Grade", minWidth=100, cellStyle=cell_style_jscode_team_grade)
                     gb.configure_column("QB", minWidth = 50, cellStyle=cell_style_jscode_qb)
                     gb.configure_column("RB", minWidth = 50, cellStyle=cell_style_jscode_rb)
