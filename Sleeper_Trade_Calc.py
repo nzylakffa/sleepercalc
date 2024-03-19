@@ -23,12 +23,13 @@ st.sidebar.markdown("<h1 style='text-align: center;'>Read This!</h1>", unsafe_al
 st.sidebar.markdown("1) Click Fullscreen at the bottom for a better user experience")
 st.sidebar.markdown("2) Input Sleeper Username")
 st.sidebar.markdown("3) Input Season")
-st.sidebar.markdown("(This is the season you're looking at. Use 2023 for last season and 2024 once we draft our teams for 2024.)")
+st.sidebar.markdown("(Use 2023 for last season and 2024 once we draft our teams for 2024.)")
 st.sidebar.markdown("4) Select the league you want to use")
 st.sidebar.markdown("(This is a dropdown of all the league's you're in! If you don't know which is which then just pick one and check out the trade calculator tab to see which team of yours that is.)")
 st.sidebar.markdown("5) Turn on the toggle if it's a dynasty league")
 st.sidebar.markdown("6) Input your league's scoring format")
 st.sidebar.markdown("7) You'll need to wait a few seconds, but the Power Rankings and Trade Calculator can be used now!")
+st.sidebar.markdown("8) If a trade partner's roster strength is displaying as 0, it's likely because they're a co owner. If that happens, find their co owner and use that display name.")
 
 def get_user_leagues(user_id, sport, season):
     api_url = f"https://api.sleeper.app/v1/user/{user_id}/leagues/{sport}/{season}"
@@ -115,6 +116,11 @@ def get_league_draft(league_id):
     except requests.exceptions.RequestException as err:
         st.write ("Error: Please Input League ID Above:")
         
+# Find best match function
+@st.cache_data(ttl=1500)  # Set the time-to-live (TTL) to 1500 seconds (adjust as needed)
+def find_best_match(player_name, choices):
+    return process.extractOne(player_name, choices)
+
 st.markdown("<h3 style='text-align: center;'>Click Fullscreen at the bottom for a better user experience!</h3>", unsafe_allow_html=True)
 username_to_query = st.text_input("Input Username", value="")
 season = st.number_input("Input Season (use the year the draft happened in)", value = 2023)
@@ -261,11 +267,7 @@ if username_to_query and season:  # Check if both username and season have been 
                     k_grades = []
                     dst_grades = []
 
-                    for i in range(len(display_names)):
-                        # Find best match function
-                        @st.cache_data(ttl=600)  # Set the time-to-live (TTL) to 600 seconds (adjust as needed)
-                        def find_best_match(player_name, choices):
-                            return process.extractOne(player_name, choices)
+                    for i in range(len(league_rosters)):
                         # Get the player id's for each team
                         owner_ids_for_team_grades.append(league_rosters[i]['owner_id'])
                         roster = league_rosters[i].get('players', [])
@@ -825,12 +827,6 @@ if username_to_query and season:  # Check if both username and season have been 
                     my_team_df = final_my_team_roster
                     trade_partner_df = final_trade_partner_roster  
 
-                    # Define find_best_match
-                    # Function to find the best match for each player
-                    @st.cache_data(ttl=600)  # Set the time-to-live (TTL) to 600 seconds (adjust as needed)
-                    def find_best_match(player_name, choices):
-                        return process.extractOne(player_name, choices)
-
                     #################################################
                     ########## My Team and Opponent Values ##########
                     #################################################
@@ -1157,7 +1153,7 @@ if username_to_query and season:  # Check if both username and season have been 
 
                     with col2:
                         st.write("Trade Partner's Roster Strength: ", round(trade_partner_final_starters[scoring].sum() + trade_partner_adj_bench_weights_df['Weighted PPG'].sum(),2))
-
+                        
                     # Combine starters and bench
                     my_roster = [*final_starters['Player Name'], *adj_bench_weights_df['Player Name']]
                     opponents_roster = [*trade_partner_final_starters['Player Name'], *trade_partner_adj_bench_weights_df['Player Name']]
@@ -1552,37 +1548,7 @@ if username_to_query and season:  # Check if both username and season have been 
                         st.dataframe(opponent_post_trade_roster, use_container_width = True)        
 
 
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
+     
                         
                         
                         
@@ -1635,11 +1601,7 @@ if username_to_query and season:  # Check if both username and season have been 
                     k_grades = []
                     dst_grades = []
 
-                    for i in range(len(display_names)):
-                        # Find best match function
-                        @st.cache_data(ttl=600)  # Set the time-to-live (TTL) to 600 seconds (adjust as needed)
-                        def find_best_match(player_name, choices):
-                            return process.extractOne(player_name, choices)
+                    for i in range(len(league_rosters)):
                         # Get the player id's for each team
                         owner_ids_for_team_grades.append(league_rosters[i]['owner_id'])
                         roster = league_rosters[i].get('players', [])
@@ -2194,12 +2156,6 @@ if username_to_query and season:  # Check if both username and season have been 
                     # rename to match the other script
                     my_team_df = final_my_team_roster
                     trade_partner_df = final_trade_partner_roster  
-
-                    # Define find_best_match
-                    # Function to find the best match for each player
-                    @st.cache_data(ttl=600)  # Set the time-to-live (TTL) to 600 seconds (adjust as needed)
-                    def find_best_match(player_name, choices):
-                        return process.extractOne(player_name, choices)
 
                     #################################################
                     ########## My Team and Opponent Values ##########
