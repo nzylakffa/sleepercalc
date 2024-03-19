@@ -2852,6 +2852,8 @@ if username_to_query and season:  # Check if both username and season have been 
         pass
     except numpy.core._exceptions._UFuncNoLoopError:
         st.write("If you're seeing this error then you need to make sure your team and your trade partners team are different in the Trade Calculator tab")
+    except NameError:
+        st.write("If you're seeing this error then you need to make sure your team and your trade partners team are different in the Trade Calculator tab")
         
 else:
     # Prompt the user to input the username and season if they haven't done so
