@@ -2850,7 +2850,7 @@ if username_to_query and season:  # Check if both username and season have been 
                             st.write("Trade Partner's New Adjusted PPG: ", round(trade_partner_final_starters[scoring].sum() + trade_partner_adj_bench_weights_df['Weighted PPG'].sum(),2))
                             st.dataframe(opponent_post_trade_roster, use_container_width = True)
         pass
-    except numpy.core._exceptions._UFuncNoLoopError:
+    except np.core._exceptions._UFuncNoLoopError:
         st.warning("If you're seeing this error then you need to make sure your team and your trade partners team are different in the Trade Calculator tab")
     except NameError:
         st.warning("If you're seeing this error then you need to make sure your team and your trade partners team are different in the Trade Calculator tab")
