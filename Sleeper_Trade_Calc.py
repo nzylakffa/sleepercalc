@@ -18,7 +18,7 @@ from st_aggrid import AgGrid, GridOptionsBuilder, JsCode
 ###################
 ##### Sidebar #####
 ###################
-# st.sidebar.image('ffa_red.png', use_column_width=True)
+st.sidebar.image('ffa_red.png', use_column_width=True)
 st.sidebar.markdown("<h1 style='text-align: center;'>Read This!</h1>", unsafe_allow_html=True)
 st.sidebar.markdown("1) Click Fullscreen at the bottom for a better user experience")
 st.sidebar.markdown("2) Input Sleeper Username")
@@ -283,7 +283,7 @@ if username_to_query and season:  # Check if both username and season have been 
                             final_roster['Best Match'] = final_roster['Player Name'].apply(lambda x: find_best_match(x, ros['Player Name']))
 
                             # Split the result into matched and unmatched
-                            final_roster['Matched'] = final_roster['Best Match'].apply(lambda x: x[0] if x[1] >= 80 else None)
+                            final_roster['Matched'] = final_roster['Best Match'].apply(lambda x: x[0] if x[1] >= 90 else None)
                             final_roster['Unmatched'] = final_roster['Player Name'][~final_roster['Matched'].notna()]
 
                             # Merge matched players based on the best match
@@ -291,6 +291,8 @@ if username_to_query and season:  # Check if both username and season have been 
 
                             # Rename Column
                             final_roster_values = final_roster_values.rename(columns={'Player Name_y': 'Player Name'})
+                            # st.dataframe(final_roster_values)
+
 
                             # Display the merged DataFrame
                             final_roster_values = final_roster_values[["Player Name", "Team", "Pos", "1 QB", "SuperFlex", "Tight End Premium", "SuperFlex & Tight End Premium"]]
@@ -837,7 +839,7 @@ if username_to_query and season:  # Check if both username and season have been 
                         my_team_df['Best Match'] = my_team_df['Player Name'].apply(lambda x: find_best_match(x, ros['Player Name']))
 
                         # Split the result into matched and unmatched
-                        my_team_df['Matched'] = my_team_df['Best Match'].apply(lambda x: x[0] if x[1] >= 80 else None)
+                        my_team_df['Matched'] = my_team_df['Best Match'].apply(lambda x: x[0] if x[1] >= 90 else None)
                         my_team_df['Unmatched'] = my_team_df['Player Name'][~my_team_df['Matched'].notna()]
 
                         # Merge matched players based on the best match
@@ -863,7 +865,7 @@ if username_to_query and season:  # Check if both username and season have been 
                         trade_partner_df['Best Match'] = trade_partner_df['Player Name'].apply(lambda x: find_best_match(x, ros['Player Name']))
 
                         # Split the result into matched and unmatched
-                        trade_partner_df['Matched'] = trade_partner_df['Best Match'].apply(lambda x: x[0] if x[1] >= 80 else None)
+                        trade_partner_df['Matched'] = trade_partner_df['Best Match'].apply(lambda x: x[0] if x[1] >= 90 else None)
                         trade_partner_df['Unmatched'] = trade_partner_df['Player Name'][~trade_partner_df['Matched'].notna()]
 
                         # Merge matched players based on the best match
@@ -889,7 +891,7 @@ if username_to_query and season:  # Check if both username and season have been 
                         final_rostered_players['Best Match'] = final_rostered_players['Player Name'].apply(lambda x: find_best_match(x, ros['Player Name']))
 
                         # Split the result into matched and unmatched
-                        final_rostered_players['Matched'] = final_rostered_players['Best Match'].apply(lambda x: x[0] if x[1] >= 80 else None)
+                        final_rostered_players['Matched'] = final_rostered_players['Best Match'].apply(lambda x: x[0] if x[1] >= 90 else None)
                         final_rostered_players['Unmatched'] = final_rostered_players['Player Name'][~final_rostered_players['Matched'].notna()]
 
                         # Merge matched players based on the best match
@@ -1617,7 +1619,7 @@ if username_to_query and season:  # Check if both username and season have been 
                             final_roster['Best Match'] = final_roster['Player Name'].apply(lambda x: find_best_match(x, ros['Player Name']))          
 
                             # Split the result into matched and unmatched
-                            final_roster['Matched'] = final_roster['Best Match'].apply(lambda x: x[0] if x[1] >= 80 else None)
+                            final_roster['Matched'] = final_roster['Best Match'].apply(lambda x: x[0] if x[1] >= 90 else None)
                             final_roster['Unmatched'] = final_roster['Player Name'][~final_roster['Matched'].notna()]
 
                             # Merge matched players based on the best match
@@ -2167,7 +2169,7 @@ if username_to_query and season:  # Check if both username and season have been 
                         my_team_df['Best Match'] = my_team_df['Player Name'].apply(lambda x: find_best_match(x, ros['Player Name']))
 
                         # Split the result into matched and unmatched
-                        my_team_df['Matched'] = my_team_df['Best Match'].apply(lambda x: x[0] if x[1] >= 80 else None)
+                        my_team_df['Matched'] = my_team_df['Best Match'].apply(lambda x: x[0] if x[1] >= 90 else None)
                         my_team_df['Unmatched'] = my_team_df['Player Name'][~my_team_df['Matched'].notna()]
 
                         # Merge matched players based on the best match
@@ -2193,7 +2195,7 @@ if username_to_query and season:  # Check if both username and season have been 
                         trade_partner_df['Best Match'] = trade_partner_df['Player Name'].apply(lambda x: find_best_match(x, ros['Player Name']))
 
                         # Split the result into matched and unmatched
-                        trade_partner_df['Matched'] = trade_partner_df['Best Match'].apply(lambda x: x[0] if x[1] >= 80 else None)
+                        trade_partner_df['Matched'] = trade_partner_df['Best Match'].apply(lambda x: x[0] if x[1] >= 90 else None)
                         trade_partner_df['Unmatched'] = trade_partner_df['Player Name'][~trade_partner_df['Matched'].notna()]
 
                         # Merge matched players based on the best match
@@ -2219,7 +2221,7 @@ if username_to_query and season:  # Check if both username and season have been 
                         final_rostered_players['Best Match'] = final_rostered_players['Player Name'].apply(lambda x: find_best_match(x, ros['Player Name']))
 
                         # Split the result into matched and unmatched
-                        final_rostered_players['Matched'] = final_rostered_players['Best Match'].apply(lambda x: x[0] if x[1] >= 80 else None)
+                        final_rostered_players['Matched'] = final_rostered_players['Best Match'].apply(lambda x: x[0] if x[1] >= 90 else None)
                         final_rostered_players['Unmatched'] = final_rostered_players['Player Name'][~final_rostered_players['Matched'].notna()]
 
                         # Merge matched players based on the best match
