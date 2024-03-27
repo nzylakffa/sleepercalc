@@ -1511,21 +1511,23 @@ if username_to_query and season:  # Check if both username and season have been 
                         # Is it a good or bad trade?
                         if og_score == (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2)):
                             st.subheader(f":gray[This is a perfectly even trade!]")
-                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) - 10):
+                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) - 15):
                             st.subheader(f":green[You are winning this trade by a lot!]")
-                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) - 5):
+                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) - 10):
                             st.subheader(f":green[You are winning this trade!]")
-                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) - 2):
+                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) - 5):
                             st.subheader(f":green[You are winning this trade by a small amount!]")
-                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) - 0.5):
+                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) - 2):
                             st.subheader(f":green[You are winning this trade by a very small amount]")
-                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) + 0.5):
-                            st.subheader(f":red[You are losing this trade by a very small amount]")
+                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2)):
+                            st.subheader(f":green[You are winning this trade by a very small amount]")
                         elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) + 2):
-                            st.subheader(f":red[You are losing this trade by a small amount]")
+                            st.subheader(f":red[You are losing this trade by a very small amount]")
                         elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) + 5):
-                            st.subheader(f":red[You are losing this trade!]")
+                            st.subheader(f":red[You are losing this trade by a small amount]")
                         elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) + 10):
+                            st.subheader(f":red[You are losing this trade!]")
+                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum() + picks_for_value - picks_away_value,2) + 15):
                             st.subheader(f":red[You are losing this trade by a lot!]")
                         else:
                             st.subheader(f":red[You are losing this trade by a lot!]")
@@ -2813,21 +2815,21 @@ if username_to_query and season:  # Check if both username and season have been 
                         # Is it a good or bad trade?
                         if og_score == (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2)):
                             st.subheader(f":gray[This is a perfectly even trade!]")
-                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) - 4):
+                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) - 7):
                             st.subheader(f":green[You are winning this trade by a lot!]")
-                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) - 2.5):
+                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) - 4):
                             st.subheader(f":green[You are winning this trade!]")
-                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) - 1):
+                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) - 2):
                             st.subheader(f":green[You are winning this trade by a small amount!]")
                         elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) - 0.5):
                             st.subheader(f":green[You are winning this trade by a very small amount]")
                         elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) + 0.5):
                             st.subheader(f":red[You are losing this trade by a very small amount]")
-                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) + 1):
+                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) + 2):
                             st.subheader(f":red[You are losing this trade by a small amount]")
-                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) + 1.5):
-                            st.subheader(f":red[You are losing this trade!]")
                         elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) + 4):
+                            st.subheader(f":red[You are losing this trade!]")
+                        elif og_score < (round(final_starters[scoring].sum() + adj_bench_weights_df['Weighted PPG'].sum(),2) + 7):
                             st.subheader(f":red[You are losing this trade by a lot!]")
                         else:
                             st.subheader(f":red[You are losing this trade by a lot!]")
