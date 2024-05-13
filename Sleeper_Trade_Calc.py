@@ -1595,6 +1595,7 @@ if username_to_query and season:  # Check if both username and season have been 
                         github_csv_url = 'https://raw.githubusercontent.com/nzylakffa/sleepercalc/main/sleeper_player_info.csv'
                         # Read the CSV file into a DataFrame
                         player_ids = pd.read_csv(github_csv_url)
+                        player_ids['player_id'] = pd.to_numeric(player_ids['player_id'], errors='coerce')
 
                         # Combine display_names and user_ids
                         name_ids = pd.DataFrame({'Display Names': display_names,
