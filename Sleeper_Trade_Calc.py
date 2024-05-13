@@ -2863,6 +2863,6 @@ if username_to_query and season:  # Check if both username and season have been 
     # except NameError:
     #     st.warning("If you're seeing this error then you need to make sure your team and your trade partners team are different in the Trade Calculator tab")
         
-else:
-    # Prompt the user to input the username and season if they haven't done so
-    st.warning("Please input a username and season to proceed.")
+# else:
+#     # Prompt the user to input the username and season if they haven't done so
+#     st.warning("Please input a username and season to proceed.")
