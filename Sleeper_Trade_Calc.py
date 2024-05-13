@@ -256,6 +256,7 @@ if username_to_query and season:  # Check if both username and season have been 
                         # Read the CSV file into a DataFrame
                         player_ids = pd.read_csv(github_csv_url)
                         player_ids['player_id'] = pd.to_numeric(player_ids['player_id'], errors='coerce')
+                        print(roster_ids['player_id'].dtype, player_ids['player_id'].dtype)
 
 
                         # Combine display_names and user_ids
