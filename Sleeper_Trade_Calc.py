@@ -256,9 +256,6 @@ if username_to_query and season:  # Check if both username and season have been 
                         # Read the CSV file into a DataFrame
                         player_ids = pd.read_csv(github_csv_url)
                         player_ids['player_id'] = pd.to_numeric(player_ids['player_id'], errors='coerce')
-                        st.write(roster_ids['player_id'].dtype)
-                        st.write(player_ids['player_id'].dtype)
-
 
                         # Combine display_names and user_ids
                         name_ids = pd.DataFrame({'Display Names': display_names,
@@ -278,6 +275,7 @@ if username_to_query and season:  # Check if both username and season have been 
                             owner_ids_for_team_grades.append(league_rosters[i]['owner_id'])
                             roster = league_rosters[i].get('players', [])
                             roster_ids = pd.DataFrame({'player_id': roster})
+                            st.write(roster_ids['player_id'].dtype)
                             final_roster = roster_ids.merge(player_ids, on='player_id', how='left')
                             final_roster = final_roster.rename(columns={'full_name': 'Player Name'})    
                             final_roster['Player Name'] = final_roster['Player Name'].fillna(final_roster['player_id'] + ' D/ST')
