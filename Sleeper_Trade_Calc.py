@@ -807,7 +807,7 @@ if username_to_query and season:  # Check if both username and season have been 
                         github_csv_url = 'https://raw.githubusercontent.com/nzylakffa/sleepercalc/main/sleeper_player_info.csv'
 
                         # Read the CSV file into a DataFrame
-                        player_ids = pd.read_csv(github_csv_url)
+                        player_ids = pd.read_csv(github_csv_url, dtype={'player_id': object})
 
                         # Perform a left join to get player for each df
                         final_my_team_roster = my_roster_ids.merge(player_ids, on='player_id', how='left')
