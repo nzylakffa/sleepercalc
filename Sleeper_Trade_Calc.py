@@ -123,7 +123,7 @@ def find_best_match(player_name, choices):
 
 st.markdown("<h3 style='text-align: center;'>Click Fullscreen at the bottom for a better user experience!</h3>", unsafe_allow_html=True)
 username_to_query = st.text_input("Input Username", value="")
-season = st.number_input("Input Season (use the year the draft happened in)", value = 2023)
+season = st.number_input("Input Season (use the year the draft happened in)", value = 2024)
 
 
 if username_to_query and season:  # Check if both username and season have been input by the user
